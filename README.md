@@ -1,4 +1,4 @@
-# zmail
+# zmall
 a learning demo
 
 从今天开始学习一个电商项目，来源尚硅谷《谷粒商城》
