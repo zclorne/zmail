@@ -1,0 +1,36 @@
+# 服务端口
+server:
+  port: 9000
+
+spring:
+  #mysql数据库
+  datasource:
+    url: jdbc:mysql://localhost:3306/zmail?characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: 123456
+  #dubbo配置
+  dubbo:
+    application:
+    base-package:
+    protocol:
+      name:
+    #注册中心即zk的通讯配置
+    registry:
+      address:
+      protocol:
+
+#mybatis
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+mapper:
+  mappers:
+  - tk.mybatis.mapper.common.Mapper
+  notEmpty: true
+
+
+#日志级别
+logging:
+  level: info

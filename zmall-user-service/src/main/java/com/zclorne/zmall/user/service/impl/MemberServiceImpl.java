@@ -1,12 +1,13 @@
 package com.zclorne.zmall.user.service.impl;
 
+import com.alibaba.dubbo.config.annotation.Service;
 import com.zclorne.zmall.bean.UmsMember;
 import com.zclorne.zmall.service.MemberService;
 
 import com.zclorne.zmall.user.mapper.MemberMapper;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+
 
 import java.util.List;
 
