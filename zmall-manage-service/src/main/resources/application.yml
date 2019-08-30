@@ -1,6 +1,6 @@
 # 服务端口
 server:
-  port: 9000
+  port: 9020
 
 spring:
   #mysql配置
@@ -24,12 +24,12 @@ mapper:
 # 日志配置
 logging:
   level:
-    root: debug
+    root: info
 
 #dubbo配置
 dubbo:
   application:
-    name: user-service
+    name: manage-service
   protocol:
     name: dubbo
   #zk配置

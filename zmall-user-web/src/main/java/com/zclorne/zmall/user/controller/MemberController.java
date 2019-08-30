@@ -2,7 +2,7 @@ package com.zclorne.zmall.user.controller;
 
 import com.zclorne.zmall.bean.UmsMember;
 import com.zclorne.zmall.service.MemberService;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,7 +17,7 @@ import java.util.List;
 @RequestMapping("member")
 public class MemberController {
 
-    @Autowired
+    @Reference
     private MemberService memberService;
 
     @RequestMapping("getMember")

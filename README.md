@@ -7,3 +7,6 @@ a learning demo
 
 zmall-user-service 用户服务的service层 9000
 zmall-user-web     用户服务的web层     9010
+
+zmall-manage-service 用户服务的service层 9020
+zmall-manage-web     用户服务的web层     9030

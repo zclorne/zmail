@@ -21,16 +21,16 @@ public class PmsBaseCatalog2 implements Serializable {
     @Column
     private String catalog1Id;
 
-//    @Transient
-//    private List<PmsBaseCatalog3> catalog3List;
-//
-//    public List<PmsBaseCatalog3> getCatalog3List() {
-//        return catalog3List;
-//    }
-//
-//    public void setCatalog3List(List<PmsBaseCatalog3> catalog3List) {
-//        this.catalog3List = catalog3List;
-//    }
+    @Transient
+    private List<PmsBaseCatalog3> catalog3List;
+
+    public List<PmsBaseCatalog3> getCatalog3List() {
+        return catalog3List;
+    }
+
+    public void setCatalog3List(List<PmsBaseCatalog3> catalog3List) {
+        this.catalog3List = catalog3List;
+    }
 
     public String getId() {
         return id;
