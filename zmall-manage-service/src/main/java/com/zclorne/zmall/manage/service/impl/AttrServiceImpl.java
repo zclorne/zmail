@@ -30,6 +30,12 @@ public class AttrServiceImpl implements AttrService {
         PmsBaseAttrInfo pmsBaseAttrInfo = new PmsBaseAttrInfo();
         pmsBaseAttrInfo.setCatalog3Id(catalog3Id);
         List<PmsBaseAttrInfo> list = pmsBaseAttrInfoMapper.select(pmsBaseAttrInfo);
+
+        list.forEach(t->{
+            PmsBaseAttrValue value = new PmsBaseAttrValue();
+            value.setAttrId(t.getId());
+            t.setAttrValueList(pmsBaseAttrValueMapper.select(value));
+        });
         return list;
     }
 
