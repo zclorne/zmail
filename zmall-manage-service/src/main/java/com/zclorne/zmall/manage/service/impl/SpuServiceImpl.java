@@ -69,28 +69,6 @@ public class SpuServiceImpl implements SpuService {
                 pmsProductSaleAttrValueMapper.insertSelective(e);
             });
         });
-
-//        //保存图片信息
-//        List<PmsProductImage> pmsProductImageList = pmsProductInfo.getPmsProductImageList();
-//
-//        for (PmsProductImage pmsProductImage : pmsProductImageList) {
-//            pmsProductImage.setProductId(prodectId);
-//            pmsProductImageMapper.insertSelective(pmsProductImage);
-//        }
-
-//        //保存销售属性
-//        List<PmsProductSaleAttr> pmsProductSaleAttrList = pmsProductInfo.getPmsProductSaleAttrList();
-//        for (PmsProductSaleAttr t : pmsProductSaleAttrList) {
-//            t.setProductId(prodectId);
-//            pmsProductSaleAttrMapper.insertSelective(t);
-//
-//            //保存销售属性值
-//            List<PmsProductSaleAttrValue> pmsProductSaleAttrValueList = t.getPmsProductSaleAttrValueList();
-//            for (PmsProductSaleAttrValue e : pmsProductSaleAttrValueList) {
-//                e.setProductId(prodectId);
-//                pmsProductSaleAttrValueMapper.insertSelective(e);
-//            }
-//        }
         return "success";
     }
 
@@ -114,5 +92,21 @@ public class SpuServiceImpl implements SpuService {
             t.setPmsProductSaleAttrValueList(pmsProductSaleAttrValueMapper.select(pmsProductSaleAttrValue));
         });
         return list;
+    }
+
+    @Override
+    public List<PmsProductSaleAttr> spuSaleAttrListCheckBySku(String skuId, String productId) {
+//        PmsProductSaleAttr pmsProductSaleAttr = new PmsProductSaleAttr();
+//        pmsProductSaleAttr.setProductId(productId);
+//        List<PmsProductSaleAttr> select = pmsProductSaleAttrMapper.select(pmsProductSaleAttr);
+//        select.forEach(t->{
+//            PmsProductSaleAttrValue pmsProductSaleAttrValue = new PmsProductSaleAttrValue();
+//            pmsProductSaleAttrValue.setProductId(productId);
+//            pmsProductSaleAttrValue.setSaleAttrId(t.getSaleAttrId());
+//            List<PmsProductSaleAttrValue> values = pmsProductSaleAttrValueMapper.select(pmsProductSaleAttrValue);
+//            t.setPmsProductSaleAttrValueList(values);
+//        });
+        List<PmsProductSaleAttr> select = pmsProductSaleAttrMapper.selectSpuSaleAttrListCheckBySku(skuId,productId);
+        return select;
     }
 }

@@ -3,4 +3,26 @@
 <mapper namespace="com.zclorne.zmall.manage.mapper.PmsProductSaleAttrMapper">
 
 
+    <select id="selectSpuSaleAttrListCheckBySku" resultMap="selectSpuSaleAttrListCheckBySkuMap">
+        SELECT
+            sa.id AS sa_id,
+            sa.*, sav.id AS sav_id,
+            sav.*,
+            IF (ssav.id, 1, 0) AS isChecked
+        FROM
+            pms_product_sale_attr sa
+        INNER JOIN pms_product_sale_attr_value sav ON sa.product_id = sav.product_id
+        AND sa.sale_attr_id = sav.sale_attr_id
+        AND sa.product_id = #{productId}
+        LEFT JOIN pms_sku_sale_attr_value ssav ON sav.id = ssav.sale_attr_value_id
+        AND ssav.sku_id = #{skuId}
+        ORDER BY sav_id
+    </select>
+
+    <resultMap id="selectSpuSaleAttrListCheckBySkuMap" type="com.zclorne.zmall.bean.PmsProductSaleAttr" autoMapping="true">
+        <result property="id" column="sa_id"></result>
+        <collection property="pmsProductSaleAttrValueList" ofType="com.zclorne.zmall.bean.PmsProductSaleAttrValue" autoMapping="true">
+            <result property="id" column="sav_id"></result>
+        </collection>
+    </resultMap>
 </mapper>

@@ -1,6 +1,9 @@
 package com.zclorne.zmall.service;
 
+import com.zclorne.zmall.bean.PmsProductSaleAttr;
 import com.zclorne.zmall.bean.PmsSkuInfo;
+
+import java.util.List;
 
 
 /**
@@ -9,4 +12,8 @@ import com.zclorne.zmall.bean.PmsSkuInfo;
  */
 public interface SkuService {
     String saveSkuInfo(PmsSkuInfo pmsSkuInfo);
+
+    PmsSkuInfo getSkuInfoById(String skuId);
+
+    List<PmsSkuInfo> getSkuSaleAttrValueListBySpu(String productId);
 }

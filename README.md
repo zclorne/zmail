@@ -5,8 +5,10 @@ a learning demo
 
 系统梳理一下项目开发流程，学习微服务与分布式开发
 
-zmall-user-service 用户服务的service层 9000
-zmall-user-web     用户服务的web层     9010
 
-zmall-manage-service 用户服务的service层 9020
-zmall-manage-web     用户服务的web层     9030
+- zmall-user-service 用户服务的service层 9000
+- zmall-user-web     用户服务的web层     9010
+- zmall-manage-service 用户服务的service层 9020
+- zmall-manage-web     用户服务的web层     9030
+- zmall-item-service 前台商品详情          
+- zmall-item-web     前台的商品详情展示     9040
